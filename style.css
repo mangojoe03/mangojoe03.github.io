@@ -1,0 +1,21 @@
+html {
+    --text: #000000;
+    --background: #85a3e0;
+    --primary: #80c8ff;
+    --secondary: #b2b28a;
+    --accent: #ffffff;
+    
+}
+body {
+    color: var(--text);
+    background: var(--background)
+}
+p {
+    background: var(--accent);
+}
+img {
+    padding: 4px;
+    border: 4px dashed var(--secondary);
+    border-radius: 16px;
+    background: var(--primary);
+}
