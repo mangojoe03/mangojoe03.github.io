@@ -8,8 +8,17 @@ html {
 }
 body {
     color: var(--text);
-    background: var(--background)
+    background: var(--background);
+    font-family: "Passion One";
 }
+h1,
+h2,
+h3{
+    color: var(--primary);
+    font-family: "pacifico" ;
+}
+
+
 p {
     background: var(--accent);
 }
