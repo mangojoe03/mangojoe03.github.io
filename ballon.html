@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <p>🎈</p>
+    <p id="balloon">🎈</p>
     <script>
         let size = 10;
-        const p = document.querySelector("p")
+        const p = document.getElementById("balloon")
         p.style.fontSize = size + "px";
         function handleKeyDown(event) {
             if (event.key == "ArrowUp") {
@@ -26,6 +26,8 @@
             }
         }
         window.addEventListener("keydown", handleKeyDown);
+
+        
     </script>
 </body>
 

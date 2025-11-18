@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Clicker Game</title>
+</head>
+<body>
+    <button onclick="addClick()">Click Me!</button>
+    <p id="clickcount">Clicks: 0</p>
+
+    <script>
+        // Variables
+        let clicks = 0;
+
+        // Function to handle clicks
+        function addClick() {
+            clicks++;
+            document.getElementById("clickcount").innerHTML = 'Clicks: ' + clicks;
+        }
+    </script>
+</body>
+</html>
