@@ -24,11 +24,28 @@
     <p id="clickcount">Clicks: 0</p>
     <button onclick="changeColor()">Change Background Color</button>
 
+    <br><br>
+    <label>
+        <input type="checkbox" id="autoclick" onchange="toggleAutoClick()">
+        Enable Auto-Clicker
+    </label>
+
     <script>
       let clicks = 0;
+      let autoClickInterval = null;
+
       function addClick() {
         clicks++;
         document.getElementById("clickcount").innerHTML = "Clicks: " + clicks;
+      }
+
+      function toggleAutoClick() {
+        const checkbox = document.getElementById("autoclick");
+        if (checkbox.checked) {
+          autoClickInterval = setInterval(addClick, 500);
+        } else {
+          clearInterval(autoClickInterval);
+        }
       }
 
       const colors = [
@@ -49,4 +66,3 @@
     </script>
   </body>
 </html>
->
