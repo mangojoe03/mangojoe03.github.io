@@ -1,63 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Clicker Game</title>
-</head>
-<body>
+    <style>
+      body {
+        background: violet;
+        transition: background-color 0.5s ease;
+      }
+
+      button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
     <button onclick="addClick()">Click Me!</button>
+    <button onclick="changeColor()">Change Background Color</button>
     <p id="clickcount">Clicks: 0</p>
 
     <script>
-        document.body.style.background = "violet"
-        let clicks = 0;
+      let clicks = 0;
+      const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33F5", "#F5FF33"];
+      let colorIndex = 0;
 
-        // Function to handle clicks
-        function addClick() {
-            clicks++;
-            document.getElementById("clickcount").innerHTML = 'Clicks: ' + clicks;
-        }
-        <!DOCTYPE html>
-<html>
-<head>
-<title>Color Changer</title>
-<style>
-  body {
-    transition: background-color 0.5s ease; /* Smooth transition for color change */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-  }
-</style>
-</head>
-<body>
+      function addClick() {
+        clicks++;
+        document.getElementById("clickcount").innerHTML = "Clicks: " + clicks;
+      }
 
-<button onclick="changeColor()">Change Background Color</button>
-
-<script>
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#FF33F5", "#F5FF33"]; // Array of colors
-  let colorIndex = 0; // Initial index
-
-  function changeColor() {
-    // Change the body's background color to the next color in the array
-    document.body.style.backgroundColor = colors[colorIndex];
-    
-    // Increment the index and use the modulo operator (%) to cycle back to the start
-    colorIndex = (colorIndex + 1) % colors.length;
-  }
-</script>
-
-</body>
-</html>
-
+      function changeColor() {
+        document.body.style.backgroundColor = colors[colorIndex];
+        colorIndex = (colorIndex + 1) % colors.length;
+      }
     </script>
-</body>
+  </body>
 </html>
